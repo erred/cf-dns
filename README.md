@@ -1,9 +1,9 @@
-# cf-dns-update
+# cf-dns
 
 update Cloudflare DNS A & CNAME records
 
-[![License](https://img.shields.io/github/license/seankhliao/cf-dns-update.svg?style=for-the-badge&maxAge=31536000)](LICENSE)
-[![Build](https://badger.seankhliao.com/i/github_seankhliao_cf-dns-update)](https://badger.seankhliao.com/l/github_seankhliao_cf-dns-update)
+[![License](https://img.shields.io/github/license/seankhliao/cf-dns.svg?style=for-the-badge&maxAge=31536000)](LICENSE)
+[![Build](https://badger.seankhliao.com/i/github_seankhliao_cf-dns)](https://badger.seankhliao.com/l/github_seankhliao_cf-dns)
 
 ## About
 
@@ -31,12 +31,12 @@ RECORD = [zone] : [proxy] : [name] : [type] : [content / replicas]
 
 X_AUTH_EMAIL = Email for cloudflare api
 X_AUTH_KEY = Api key for cloudflare api
-````
+```
 
 #### Run
 
 after setting all the env vars
 
 ```
-cf-dns-update
+cf-dns
 ```

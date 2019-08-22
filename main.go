@@ -136,7 +136,9 @@ func main() {
 	c.Auth()
 	c.GetZone()
 	rs := c.GetRecords()
-	sort.Sort(Records(rs))
+	sort.Slice(rs, func(i, j int) bool {
+		return rs[i].ModifiedOn.Before(rs[j].ModifiedOn)
+	})
 
 	switch c.recordType {
 	case "A":
@@ -203,9 +205,3 @@ func main() {
 	}
 
 }
-
-type Records []cloudflare.DNSRecord
-
-func (r Records) Len() int           { return len(r) }
-func (r Records) Less(i, j int) bool { return r[i].ModifiedOn.Before(r[j].ModifiedOn) }
-func (r Records) Swap(i, j int)      { r[i], r[j] = r[j], r[i] }
